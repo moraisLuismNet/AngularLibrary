@@ -9,7 +9,7 @@
             type="text"
             class="form-control"
             name="name"
-            [(ngModel)]="publishingHouse.name"
+            [(ngModel)]="publishingHouse.namePublishingHouse"
             required
             #name="ngModel"
             id="name"
@@ -22,6 +22,7 @@
             Name Required
           </span>
         </div>
+        <div class="d-flex gap-2 mt-2">
         <button
           type="submit"
           class="btn btn-primary"
@@ -37,6 +38,7 @@
         >
           Cancel edition
         </button>
+      </div>
       </form>
     </div>
     <div class="col-8">
@@ -58,7 +60,7 @@
         </ng-template>
         <ng-template pTemplate="body" let-publishingHouse>
           <tr>
-            <td>{{ publishingHouse.name }}</td>
+            <td>{{ publishingHouse.namePublishingHouse }}</td>
             <td>
               {{ publishingHouse.totalBooks}}
             </td>

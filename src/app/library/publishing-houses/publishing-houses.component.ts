@@ -24,7 +24,7 @@ export class PublishingHousesComponent implements OnInit {
 
   publishingHouse: IPublishingHouse = {
     idPublishingHouse: 0,
-    name: '',
+    namePublishingHouse: '',
   };
 
   ngOnInit(): void {
@@ -82,13 +82,13 @@ export class PublishingHousesComponent implements OnInit {
   cancelEdition() {
     this.publishingHouse = {
       idPublishingHouse: 0,
-      name: '',
+      namePublishingHouse: '',
     };
   }
 
   confirmDelete(publishingHouse: IPublishingHouse) {
     this.confirmationService.confirm({
-      message: `Delete the publishingHouse ${publishingHouse.name}?`,
+      message: `Delete the publishingHouse ${publishingHouse.namePublishingHouse}?`,
       header: 'Are you sure?',
       icon: 'pi pi-exclamation-triangle',
       acceptLabel: 'Yes',

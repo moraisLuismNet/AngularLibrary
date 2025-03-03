@@ -14,7 +14,7 @@ export class LibraryService {
 
   getPublishingHouses(): Observable<IPublishingHouse[]> {
     const headers = this.getHeaders();
-    return this.http.get<IPublishingHouse[]>(`${this.urlAPI}publishingHouses`, {
+    return this.http.get<IPublishingHouse[]>(`${this.urlAPI}publishingHouses/withTotalBooks`, {
       headers,
     });
   }
@@ -46,7 +46,7 @@ export class LibraryService {
 
   getAuthors(): Observable<IAuthor[]> {
     const headers = this.getHeaders();
-    return this.http.get<IAuthor[]>(`${this.urlAPI}authors`, {
+    return this.http.get<IAuthor[]>(`${this.urlAPI}authors/withTotalBooks`, {
       headers,
     });
   }

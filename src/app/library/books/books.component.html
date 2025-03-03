@@ -1,13 +1,13 @@
 <div class="container my-2 px-2">
-  <div class="row mt-4">
+  <div class="row mt-1">
     <div class="col-3">
       <h1>Add Book</h1>
       <form #form="ngForm" (submit)="save()">
         <div class="form-group">
-          <label for="title">Title</label>
+          <label for="title" class="small mb-1">Title</label>
           <input
             type="text"
-            class="form-control"
+            class="form-control form-control-sm"
             name="title"
             [(ngModel)]="book.title"
             required
@@ -23,10 +23,10 @@
           </span>
         </div>
         <div class="form-group">
-          <label for="pages">Pages</label>
+          <label for="pages" class="small mb-1">Pages</label>
           <input
             type="number"
-            class="form-control"
+            class="form-control form-control-sm"
             name="pages"
             [(ngModel)]="book.pages"
             required
@@ -43,10 +43,10 @@
           </span>
         </div>
         <div class="form-group">
-          <label for="price">Price</label>
+          <label for="price" class="small mb-1">Price</label>
           <input
             type="number"
-            class="form-control"
+            class="form-control form-control-sm"
             name="price"
             [(ngModel)]="book.price"
             required
@@ -64,55 +64,58 @@
         </div>
         <div class="form-check">
           <input
-            class="form-check-input"
+            class="form-check-input form-control-sm"
             type="checkbox"
             [(ngModel)]="book.discontinued"
             id="discontinued"
             name="discontinued"
+            style="transform: scale(0.6);"
           />
-          <label class="form-check-label" for="discontinued">
+          <label class="form-check-label" for="discontinued" class="small mb-1">
             Discontinued
           </label>
         </div>
         <div class="form-group">
-          <label for="publishingHouse">Publishing House</label>
+          <label for="publishingHouse" class="small mb-1">Publishing House</label>
           <select
-            class="form-select"
+            class="form-select form-control-sm"
             [(ngModel)]="book.publishingHouseId"
             name="publishingHouse"
             required
             Id="publishingHouse"
+            style="font-size: 0.9rem;"
           >
             <option value="null">Select a Publishing House</option>
             <option
               *ngFor="let publishingHouse of publishingHouses"
               [value]="publishingHouse.idPublishingHouse"
             >
-              {{ publishingHouse.name }}
+              {{ publishingHouse.namePublishingHouse }}
             </option>
           </select>
         </div>
         <div class="form-group">
-          <label for="author">Author</label>
+          <label for="author" class="small mb-1">Author</label>
           <select
-            class="form-select"
+            class="form-select form-control-sm"
             [(ngModel)]="book.authorId"
             name="author"
             required
             Id="author"
+            style="font-size: 0.9rem;"
           >
             <option value="null">Select an Author</option>
             <option *ngFor="let author of authors" [value]="author.idAuthor">
-              {{ author.name }}
+              {{ author.nameAuthor }}
             </option>
           </select>
         </div>
         <!-- Display the name of the selected image -->
         <div class="form-group" *ngIf="book.photoName">
-          <label for="nameImage">Name of the selected image:</label>
+          <label for="nameImage" class="small mb-1">Name of the selected image:</label>
           <input
             type="text"
-            class="form-control"
+            class="form-control form-control-sm"
             id="nameImage"
             [(ngModel)]="book.photoName"
             name="nameImage"
@@ -120,21 +123,24 @@
           />
         </div>
         <div class="mt-3">
-          <label for="image" class="form-label">Choose a image</label>
+          <label for="image" class="form-label" class="small mb-1">Choose a image</label>
           <input
-            class="form-control"
+            class="form-control form-control-sm"
             type="file"
             id="image"
             (change)="onChange($event)"
             accept="image/*"
             #fileInput
+            style="font-size: 0.60rem;"
           />
         </div>
+        <div class="d-flex gap-2 mt-2">
         <button
           type="submit"
           class="btn btn-primary"
           (click)="onAcept()"
           [disabled]="form.invalid"
+          style="font-size: 0.85rem; padding: 0.25rem 0.75rem;"
         >
           Accept
         </button>
@@ -143,9 +149,11 @@
           class="btn btn-warning"
           *ngIf="book.isbn !== 0"
           (click)="cancelEdition()"
+          style="font-size: 0.85rem; padding: 0.25rem 0.75rem;"
         >
           Cancel edition
         </button>
+      </div>
       </form>
     </div>
     <div class="col-9">
@@ -160,26 +168,26 @@
       >
         <ng-template pTemplate="header">
           <tr>
-            <th>Title</th>
             <th></th>
-            <th>Pages</th>
-            <th>Price</th>
-            <th>Disc.</th>
-            <th>Pub-House</th>
-            <th>Author</th>
+            <th style="font-size: 15px;">Title</th>
+            <th style="font-size: 15px;">Author</th>
+            <th style="font-size: 15px;">Pub-House</th>
+            <th style="font-size: 15px;">Pages</th>
+            <th style="font-size: 15px;">Price</th>
+            <th style="font-size: 12px;">Discontinued</th>
             <th></th>
             <th></th>
           </tr>
         </ng-template>
         <ng-template pTemplate="body" let-book>
           <tr>
-            <td>{{ book.title }}</td>
             <td><img src="{{ book.photoCover }}" width="80" /></td>
-            <td>{{ book.pages }}</td>
-            <td>{{ book.price | number : "1.2-2" }} €</td>
-            <td>{{ book.discontinued ? "Sí" : "No" }}</td>
-            <td>{{ book.namePublishingHouse }}</td>
-            <td>{{ book.nameAuthor }}</td>
+            <td style="font-size: 12px;">{{ book.title }}</td>
+            <td style="font-size: 12px;">{{ book.nameAuthor }}</td>
+            <td style="font-size: 12px;">{{ book.namePublishingHouse }}</td>
+            <td style="font-size: 12px;">{{ book.pages }}</td>
+            <td style="font-size: 12px;">{{ book.price | number : "1.2-2" }} €</td>
+            <td style="font-size: 12px;">{{ book.discontinued ? "Yes" : "No" }}</td>
             <td></td>
             <td>
               <p-button

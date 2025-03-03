@@ -97,7 +97,6 @@ export class BooksComponent implements OnInit {
   onAcept() {
     // After processing the selected file, delete its contents from the input
     this.fileInput.nativeElement.value = '';
-    //this.book.photo = null; // Clean up the file reference in the model as well if necessary
   }
 
   showImage(book: IBook) {
@@ -166,8 +165,8 @@ export class BooksComponent implements OnInit {
   }
 
   edit(book: IBook) {
-    const publishingHouseFind = this.publishingHouses.find(c => c.name === book.namePublishingHouse);
-    const authorFind = this.authors.find(c => c.name === book.nameAuthor);
+    const publishingHouseFind = this.publishingHouses.find(c => c.namePublishingHouse === book.namePublishingHouse);
+    const authorFind = this.authors.find(c => c.nameAuthor === book.nameAuthor);
     this.book = { ...book };
     this.book.publishingHouseId = publishingHouseFind?.idPublishingHouse ?? null;
     this.book.authorId = authorFind?.idAuthor ?? null;

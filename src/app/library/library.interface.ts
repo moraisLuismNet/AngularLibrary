@@ -1,12 +1,12 @@
 export interface IPublishingHouse{
   idPublishingHouse?: number;
-  name: string;
+  namePublishingHouse: string;
   totalBooks?: number;
 }
 
 export interface IAuthor {
   idAuthor?: number;
-  name: string;
+  nameAuthor: string;
   totalBooks?: number;
 }
 

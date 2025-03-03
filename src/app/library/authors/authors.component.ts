@@ -23,7 +23,7 @@ export class AuthorsComponent implements OnInit {
 
   author: IAuthor = {
     idAuthor: 0,
-    name: '',
+    nameAuthor: '',
   };
 
   ngOnInit(): void {
@@ -81,13 +81,13 @@ export class AuthorsComponent implements OnInit {
   cancelEdition() {
     this.author = {
       idAuthor: 0,
-      name: '',
+      nameAuthor: '',
     };
   }
 
   confirmDelete(author: IAuthor) {
     this.confirmationService.confirm({
-      message: `Delete the author ${author.name}?`,
+      message: `Delete the author ${author.nameAuthor}?`,
       header: 'Are you sure?',
       icon: 'pi pi-exclamation-triangle',
       acceptLabel: 'Yes',
@@ -120,7 +120,7 @@ export class AuthorsComponent implements OnInit {
       this.errorMessage = err.error;
     } else {
       // Handles the case where no useful error message is received
-      this.errorMessage = 'Se ha producido un error inesperado';
+      this.errorMessage = 'An unexpected error has occurred';
     }
   }
 }
