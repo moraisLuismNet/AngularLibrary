@@ -1,5 +1,56 @@
 ## AngularLibrary
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.14.
+
+**AngularLibrary** is a library management web application. It allows users to authenticate themselves and manage authors, publishers, and books. The application is an administration panel for managing a library's core resources (authors, publishers, and books), with a basic authentication and access protection system. This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.14.
+
+![AngularLibrary](img/UML.png)
+
+AngularLibrary/  
+├───app/  
+│   ├───guards/  
+│   │   └───auth-guard.service.ts  
+│   ├───library/  
+│   │   ├───authors/  
+│   │   │   ├───authors.component.html  
+│   │   │   └───authors.component.ts  
+│   │   ├───books/  
+│   │   │   ├───books.component.html  
+│   │   │   └───books.component.ts  
+│   │   ├───publishing-houses/  
+│   │   │   ├───publishing-houses.component.html  
+│   │   │   └───publishing-houses.component.ts  
+│   │   ├───interfaces/  
+│   │   │   └───login.interfaces.ts  
+│   │   ├───library-routing.module.ts  
+│   │   ├───library.component.html  
+│   │   ├───library.component.ts  
+│   │   ├───library.interface.ts  
+│   │   ├───library.module.ts  
+│   │   └───library.service.ts  
+│   ├───services/  
+│   │   └───app.service.ts  
+│   ├───shared/  
+│   │   ├───navbar/  
+│   │   │   ├───navbar.component.html  
+│   │   │   └───navbar.component.ts  
+│   │   └───shared.module.ts  
+│   ├───start/  
+│   │   ├───login/  
+│   │   │   ├───login.component.css  
+│   │   │   ├───login.component.html  
+│   │   │   └───login.component.ts  
+│   │   ├───not-found/  
+│   │   │   ├───not-found.component.css  
+│   │   │   ├───not-found.component.html  
+│   │   │   └───not-found.component.ts  
+│   │   └───start.module.ts  
+│   ├───app-routing.module.ts  
+│   ├───app.component.html  
+│   ├───app.component.ts  
+│   └───app.module.ts  
+├───environments/  
+│   ├───environment.development.ts  
+│   └───environment.ts  
+└───angular.json  
 
 ![AngularLibrary](img/1.png)
 ![AngularLibrary](img/2.png)
