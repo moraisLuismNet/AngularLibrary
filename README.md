@@ -1,6 +1,6 @@
 ## AngularLibrary
 
-**AngularLibrary** is a library management web application. It allows users to authenticate themselves and manage authors, publishers, and books. The application is an administration panel for managing a library's core resources (authors, publishers, and books), with a basic authentication and access protection system. This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.14.
+**AngularLibrary** Es una aplicación web desarrollada con Angular. Su función principal es gestionar un almacén, permitiendo la administración de categorías y productos. This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.14.
 
 ![AngularLibrary](img/UML.png)
 
@@ -92,3 +92,5 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
+
+[DeepWiki moraisLuismNet/AngularLibrary](https://deepwiki.com/moraisLuismNet/AngularLibrary)
